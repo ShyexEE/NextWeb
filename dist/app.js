@@ -7,9 +7,11 @@ const express_1 = __importDefault(require("express"));
 const todos_1 = __importDefault(require("./routes/todos"));
 const body_parser_1 = require("body-parser");
 const ItemsRoutes_1 = __importDefault(require("./routes/ItemsRoutes"));
+const db_1 = __importDefault(require("./config/db"));
 const app = (0, express_1.default)();
 const port = 3000;
 app.use((0, body_parser_1.json)());
+db_1.default.connect();
 app.use("/todos", todos_1.default);
 app.use("/addItem", ItemsRoutes_1.default);
 app.use((err, req, res, next) => {
