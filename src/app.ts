@@ -12,7 +12,7 @@ app.use(json());
 db.connect();
 
 app.use("/todos", todoRoutes);
-app.use("/addItem", ItemsRoutes);
+app.use("/item", ItemsRoutes);
 
 
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {

@@ -13,7 +13,7 @@ const port = 3000;
 app.use((0, body_parser_1.json)());
 db_1.default.connect();
 app.use("/todos", todos_1.default);
-app.use("/addItem", ItemsRoutes_1.default);
+app.use("/item", ItemsRoutes_1.default);
 app.use((err, req, res, next) => {
     res.status(500).json({ message: err.message });
 });
