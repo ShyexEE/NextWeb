@@ -2,7 +2,7 @@ import { RequestHandler } from "express";
 import db from "../config/db";
 
 export const deleteItem: RequestHandler = async (req, res, next) => {
-  const itemId = req.query.id;
+  const itemId= req.query.id;
   console.log(itemId)
   const result = await db.query("SELECT * FROM nextweb WHERE id=$1", [itemId]);
   if (result.rowCount && result.rowCount > 0) {
